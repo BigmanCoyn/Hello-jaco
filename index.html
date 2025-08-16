@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Can it happen?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Can it happen?</h1>
+
+  <!-- Lighter scene -->
+  <div id="scene" class="scene" aria-label="Lighter sparking animation" role="img">
+    <!-- Simple stylized lighter (SVG) -->
+    <svg id="lighter" viewBox="0 0 220 300" aria-hidden="true" focusable="false">
+      <!-- Lid -->
+      <rect x="40" y="80" width="140" height="50" rx="8" fill="#d9d9d9"/>
+      <!-- Hinge -->
+      <circle cx="46" cy="110" r="5" fill="#b5b5b5"/>
+      <!-- Body -->
+      <rect x="40" y="120" width="140" height="150" rx="14" fill="#2e2e2e"/>
+      <!-- Top plate -->
+      <rect x="90" y="95" width="70" height="20" rx="4" fill="#eeeeee"/>
+      <!-- Flint wheel housing -->
+      <rect x="150" y="95" width="18" height="20" rx="3" fill="#bcbcbc"/>
+      <!-- Flint wheel (teeth lines) -->
+      <g transform="translate(151,97)">
+        <rect x="0" y="0" width="16" height="16" rx="3" fill="#8d8d8d"/>
+        <g opacity="0.55">
+          <rect x="2" y="2" width="1" height="12" fill="#cfcfcf"/>
+          <rect x="5" y="2" width="1" height="12" fill="#cfcfcf"/>
+          <rect x="8" y="2" width="1" height="12" fill="#cfcfcf"/>
+          <rect x="11" y="2" width="1" height="12" fill="#cfcfcf"/>
+        </g>
+      </g>
+      <!-- Spark hole (visual reference) -->
+      <circle id="spark-origin" cx="146" cy="102" r="2.5" fill="#ffeb8a"/>
+      <!-- Gloss highlight -->
+      <path d="M45,140 Q110,115 175,140" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="10" />
+    </svg>
+
+    <!-- Canvas used to draw animated sparks -->
+    <canvas id="sparkCanvas"></canvas>
+  </div>
+
+  <div class="buttons">
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Page layout */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #b22222; /* neutral red */
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  top: 40px;
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Lighter + sparks */
+.scene {
+  position: relative;
+  width: min(75vw, 320px);
+  aspect-ratio: 22 / 30;  /* keeps SVG & canvas aligned */
+  margin-top: 20px;
+  user-select: none;
+}
+.scene svg,
+.scene canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none; /* canvas shouldn't capture clicks */
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 18px;
+}
+button {
+  background: #ffffff;
+  color: #b22222;
+  border: none;
+  padding: 14px 26px;
+  margin: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+button:hover { background: #f1f1f1; transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+
+/* Small hint on tap/click interaction (optional) */
+.scene:after {
+  content: "Tap to spark";
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
